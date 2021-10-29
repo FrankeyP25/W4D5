@@ -8,32 +8,39 @@ def sub_sum(list)
             subs << list[i..j]
         end
     end
-subs.map(&:sum).max
+    subs.map(&:sum).max
 end
+
+
 
 def sub_sum2(list)
-    max = 0
-    (0...list.length).each do |i|
-        p num = list[i...list.length]
-        puts
-        # sum = num.sum
-        # single_el = list[i]
-        # if sum > single_el
-        #     max = sum
-        # else  
-        #     max = single_el
-        # end
-    end
+    max = list[0]  # 
+    cur = 0
+    
 
+    (0...list.length - 1).each do |i|
+        if list[i] > list[i] + list[i+1]
+          cur  list[i]
+        else
+            cur = list[i] + list[i+1]
+        end
+
+        if cur > max
+            max = cur
+        end
+
+        
+    end
+    max
 end
 
 
-list1 = [5, 3, -7] # 8
-p sub_sum2(list1)
+# list1 = [5, 3, -7] # 8
+# p sub_sum2(list1)
 
-
+# puts
 # list2 = [2, 3, -6, 7, -6, 7] #8
-# p sub_sum(list2)
-
-# list3 = [-5, -1, -3] #-1
-# p sub_sum(list3) 
+# p sub_sum2(list2)
+# puts
+list3 = [-5, -1, -3] #-1
+p sub_sum2(list3) 
