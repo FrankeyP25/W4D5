@@ -14,33 +14,22 @@ end
 
 
 def sub_sum2(list)
-    max = list[0]  # 
-    cur = 0
-    
-
-    (0...list.length - 1).each do |i|
-        if list[i] > list[i] + list[i+1]
-          cur  list[i]
-        else
-            cur = list[i] + list[i+1]
-        end
-
-        if cur > max
-            max = cur
-        end
-
-        
+    max = list[0]  
+    cur = list[0] 
+    list.each do |ele|
+        cur = ele > cur + ele ? ele : cur + ele
+        max = cur > max ? cur : max
     end
-    max
+max
 end
 
 
-# list1 = [5, 3, -7] # 8
-# p sub_sum2(list1)
+list1 = [5, 3, -7] # 8
+p sub_sum2(list1)
 
-# puts
-# list2 = [2, 3, -6, 7, -6, 7] #8
-# p sub_sum2(list2)
-# puts
+puts
+list2 = [2, 3, -6, 7, -6, 7] #8
+p sub_sum2(list2)
+puts
 list3 = [-5, -1, -3] #-1
 p sub_sum2(list3) 
